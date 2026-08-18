@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Arcade Game</title>
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        canvas {
+            background: #222;
+            border: 4px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+
+        let playerX = 375;
+        let playerY = 500;
+        const playerWidth = 50;
+        const playerHeight = 50;
+        const playerSpeed = 7;
+
+        let rightPressed = false;
+        let leftPressed = false;
+        let upPressed = false;
+        let downPressed = false;
+
+        let score = 0;
+
+        const lasers = [];
+        const laserWidth = 6;
+        const laserHeight = 15;
+        const laserSpeed = 10;
+        let spacePressed = false;
+
+        const enemies = [];
+        const enemyWidth = 40;
+        const enemyHeight = 40;
+        const enemySpeed = 4;
+        let enemySpawnTimer = 0;
+
+        document.addEventListener("keydown", keyDownHandler);
+        document.addEventListener("keyup", keyUpHandler);
+
+        function keyDownHandler(e) {
+            if (e.key === "Right" || e.key === "ArrowRight") {
+                rightPressed = true;
+            } else if (e.key === "Left" || e.key === "ArrowLeft") {
+                leftPressed = true;
+            } else if (e.key === "Up" || e.key === "ArrowUp") {
+                upPressed = true;
+            } else if (e.key === "Down" || e.key === "ArrowDown") {
+                downPressed = true;
+            } else if (e.key === " " || e.key === "Spacebar") {
+                spacePressed = true;
+            }
+        }
+
+        function keyUpHandler(e) {
+            if (e.key === "Right" || e.key === "ArrowRight") {
+                rightPressed = false;
+            } else if (e.key === "Left" || e.key === "ArrowLeft") {
+                leftPressed = false;
+            } if (e.key === "Up" || e.key === "ArrowUp") {
+                upPressed = false;
+            } if (e.key === "Down" || e.key === "ArrowDown") {
+                downPressed = false;
+            } else if (e.key === " " || e.key === "Spacebar") {
+                spacePressed = false;
+            }
+        }
+
+        function draw() {
+            if (spacePressed) {
+                lasers.push({
+                    x: playerX + playerWidth / 2 - laserWidth / 2,
+                    y: playerY
+                });
+                spacePressed = false;
+            }
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#00ff00";
+            ctx.fillRect(playerX, playerY, playerWidth, playerHeight);
+
+
+            for (let i = lasers.length - 1; i >= 0; i--) {
+                let laser = lasers[i];
+
+                laser.y -= laserSpeed;
+
+                ctx.fillStyle = "#00ffff";
+                ctx.fillRect(laser.x, laser.y, laserWidth, laserHeight);
+
+                if (laser.y < -laserHeight) {
+                    lasers.splice(i, 1);
+                }
+            }
+
+            enemySpawnTimer++;
+
+            if (enemySpawnTimer >= 90) {
+                let randomX = Math.random() * (canvas.width - enemyWidth);
+
+                enemies.push({
+                    x: randomX,
+                    y: -enemyHeight
+                });
+
+                enemySpawnTimer = 0;
+            }
+
+            // 1. Move horizontally based on keys
+            if (rightPressed) {
+                playerX += playerSpeed;
+            }
+            if (leftPressed) {
+                playerX -= playerSpeed;
+            }
+
+            // 2. Clamp horizontal position to screen walls
+            if (playerX < 0) {
+                playerX = 0; // Snap back to left wall
+            }
+            if (playerX > canvas.width - playerWidth) {
+                playerX = canvas.width - playerWidth; // Snap back to right wall
+            }
+
+            // 3. Move vertically based on keys
+            if (upPressed) {
+                playerY -= playerSpeed;
+            }
+            if (downPressed) {
+                playerY += playerSpeed;
+            }
+
+            // 4. Clamp vertical position to screen walls
+            if (playerY < 0) {
+                playerY = 0; // Snap back to ceiling
+            }
+            if (playerY > canvas.height - playerHeight) {
+                playerY = canvas.height - playerHeight; // Snap back to floor
+            }
+
+            for (let i = enemies.length - 1; i > 0; i--) {
+                let enemy = enemies[i];
+
+                for (let j = lasers.length - 1; j >= 0; j--) {
+                    let laser = lasers[j];
+                    
+                    if (
+                        laser.x < enemy.x + enemyWidth &&
+                        laser.x + laserWidth > enemy.x &&
+                        laser.y < enemy.y + enemyHeight &&
+                        laser.y + laserHeight > enemy.y
+                    ) {
+                        enemies.splice(i, 1);
+                        lasers.splice(j, 1);
+
+                        score += 10;
+
+                        break;
+                    }
+                }
+
+                if (!enemies[i]) continue;
+
+                enemy.y += enemySpeed;
+
+                if (
+                    playerX < enemy.x + enemyWidth &&
+                    playerX + playerWidth > enemy.x &&
+                    playerY < enemy.y + enemyHeight &&
+                    playerY + playerHeight > enemy.y
+                ){
+                    alert("GAME OVER! You were hit by an asteroid.");
+
+                    playerX = 375;
+                    playerY = 500;
+                    enemies.length = 0;
+                    enemySpawnTimer = 0;
+
+                    rightPressed = false;
+                    leftPressed = false;
+                    upPressed = false;
+                    downPressed = false;
+
+                    score = 0;
+                    lasers.length = 0;
+                    spacePressed = false;
+                }
+
+                ctx.fillStyle = "#ff0000";
+                ctx.fillRect(enemy.x, enemy.y, enemyWidth, enemyHeight);
+
+                if (enemy.y > canvas.height) {
+                    enemies.splice(i, 1);
+                }
+            }
+
+            ctx.fillStyle = "#ffffff";
+            ctx.font = "20px Courier New";
+            ctx.fillText("SCORE: " + score, 20, 30);
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+</body>
+
+</html>
