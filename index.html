@@ -4,34 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice</title>
-    <meta name="description" content="Practice Page For Html &  CSS">
-    <meta name="keywords" content="html, css, practice">
+    <title>Practice Page</title>
+    <meta name="description" content="Practice Page For Html & CSS">
+    <meta name="keywords" content="html, css, practice page">
     <link rel="stylesheet" href="assests/css/style.css">
 </head>
 
 <body>
     <header class="navbar">
         <div class="logo">
-            <img src="./assests/images/Yash.jpg" alt="My Brand" height="50" width="50">
-        </div>
+            <a href="index.html">
+                <img src="./assests/images/Yash.jpg" alt="My Brand" height="50" width="50">
+            </a>
+        </div>  
 
-        <h1>Home Page</h1>
+        <a class="main-title" href="index.html">
+            <h1>Home Page</h1>
+        </a>
+
+        <div>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
         <nav class="nav-container">
-            <ul class="nav-links">
-                <li><a href="./index.html">Home</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="./webpages/about.html">About</a></li>
                 <li><a href="./webpages/contact.html">Contact</a></li>
             </ul>
         </nav>
+        </div>
 
-        <a href="webpages/get_started.html" class="cta-btn">Get Started</a>
     </header>
-    
+        
     <main>
-        <br>
-        <!-- <h1>Home Page</h1> -->
+        <br><br>
+        <a href="webpages/get_started.html" class="cta-btn">Get Started</a>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const hamburger = document.getElementById('hamburger-btn');
+                const navLinks = document.getElementById('nav-links');
+
+                if (hamburger && navLinks) {
+                    hamburger.addEventListener('click', () => {
+                        const isExpanded = navLinks.classList.toggle('active');
+                        hamburger.setAttribute('aria-expanded', isExpanded);
+                    });
+                }
+            });
+        </script>
     </main>
 </body>
 </html>
