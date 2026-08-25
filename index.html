@@ -41,9 +41,6 @@
     </header>
         
     <main>
-        <br><br>
-        <a href="webpages/get_started.html" class="cta-btn">Get Started</a>
-
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const hamburger = document.getElementById('hamburger-btn');
@@ -57,6 +54,18 @@
                 }
             });
         </script>
+
+        <br>
+        <h2>Enter Your Details</h2>
+        
+        <form>
+            <input type="text" name="username" id="username" placeholder="Your Name" minlength="2" maxlength="32" pattern="[a-zA-z]+" title="Please enter a valid name." required><br><br>
+            <input type="email" name="email" id="email" placeholder="Email" title="Please enter a valid email." minlength="2" maxlength="32" required><br><br>
+            <input type="tel" name="phonenumber" id="phonenumber" placeholder="Mobile Number
+            " pattern="[0-9]{10}" minlength="2" maxlength="32" title="Enter a valid 10-digit number." required><br><br>
+            <textarea type="text" name="message" id="message" rows="3" placeholder="Message" minlength="2" maxlength="32" title="Please enter your message."></textarea><br><br>
+            <button type="submit">Submit</button>
+        </form>
     </main>
 </body>
 </html>
