@@ -112,25 +112,20 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    /* overflow: hidden; */
+    overflow: hidden;
     background-color: #333333;
 }
 
 .navbar ul li {
-    /* float: left; */
+    float: left;
 }
 
-.navbar li a {
+.navbar ul li a {
     text-decoration: none;
     display: block;
     color: white;
     padding: 14px 16px;
     text-align: center;
-}
-
-.navbar ul li a:hover {
-    background-color: #111111;
-    color: black;
 }
 
 .navbar li a.active {
@@ -140,7 +135,7 @@
 
 .navbar li a:hover:not(.active) {
     background-color: #555555;
-    color: white;
+    color: black;
 }
 
 /* ----- main ----- */
