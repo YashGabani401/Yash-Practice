@@ -69,7 +69,7 @@
 
         .clearfix::after {
             content: "";
-             display: block;
+            display: block;
             clear: both;
         }
 
@@ -91,6 +91,11 @@
 
         .para-md, .para-gray {
             max-width: 650px;
+        }
+
+        .align-right {
+            text-align: center;
+            max-width: 900px;
         }
 
         /* ===== header styles ===== */
@@ -156,6 +161,10 @@
         .main-section {
             padding: 64px 16px;
         }
+
+        .sub-main {
+            background-color: #f1f1f1;
+        }
      </style>
 </head>
 <body>
@@ -193,6 +202,24 @@
                     anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.</p>
+            </div>
+        </section>
+
+        <section class="main-section sub-main clearfix">
+            <div class="container">
+                <h2 class="align-right">Lorem Ipsum</h2>
+                <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+                <div class="float-right">
+                    <p class="para-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.</p>
+                    <p class="para-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                </div>
             </div>
         </section>
     </main>
