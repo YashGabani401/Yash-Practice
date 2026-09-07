@@ -47,10 +47,9 @@
             margin: 10px 0px;
         }
 
-        a {
+        header a {
             text-decoration: none;
             color: white;
-            background-color: #f44336;
             font-size: 18px;
             padding: 12px 24px;
         }
@@ -153,7 +152,7 @@
         }
 
         /* ===== main section ===== */
-        i {
+        main i {
             color: #f44336;
             font-size: 200px !important;
         }
@@ -179,6 +178,39 @@
             font-weight: 400;
             margin: 16px;
         }
+
+        /* ===== footer section ===== */
+        .footer-section {
+            padding: 64px 16px;
+        }
+        
+        .footer-section ul li i {
+            font-size: 24px;
+            color: #666666;
+        }
+
+        .footer-section .icons {
+            justify-content: center;
+            display: flex;
+        }
+
+        .footer-section nav {
+            padding: 32px 0px;
+        }
+
+        .footer-section a, .footer-section p {
+            color: #757575;
+        }
+
+        .footer-section p {
+            margin: 15px 0px;
+            text-align: center;
+        }
+
+         .footer-section i:hover {
+            color:#CCCCCC;
+         }
+
      </style>
 </head>
 <body>
@@ -243,5 +275,22 @@
             </div>
         </section>
     </main>
+
+    <footer>    
+        <section class="footer-section">
+            <nav class="container">
+                <ul class="icons">
+                    <li><i class="fa fa-facebook-official w3-hover-opacity float-left"></i></li>
+                    <li><i class="fa fa-instagram w3-hover-opacity float-left"></i></li>
+                    <li><i class="fa fa-snapchat w3-hover-opacity float-left"></i></li>
+                    <li><i class="fa fa-pinterest-p w3-hover-opacity float-left"></i></li>
+                    <li><i class="fa fa-twitter w3-hover-opacity float-left"></i></li>
+                    <li><i class="fa fa-linkedin w3-hover-opacity float-left"></i></li>
+                </ul>
+            </nav>
+            
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp">w3.css</a></p>
+        </section>
+    </footer>
 </body>
 </html>
