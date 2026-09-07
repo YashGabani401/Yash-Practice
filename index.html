@@ -42,6 +42,11 @@
             font-weight: 400;
         }
 
+        h2 {
+            font-size: 36px;
+            margin: 10px 0px;
+        }
+
         a {
             text-decoration: none;
             color: white;
@@ -58,15 +63,34 @@
             float: left;
         }
 
+        .float-right {
+            float: right;
+        }
+
         .clearfix::after {
             content: "";
-            display: block;
+             display: block;
             clear: both;
         }
 
-        .para-lg {
+        .para-st {
             font-size: 24px;
             margin: 24px 0px 40px;
+        }
+
+        .para-md {
+            font-size: 18px;
+            margin: 10px 0px;
+            padding: 32px 0px;
+        }
+
+        .para-gray {
+            color: #757575;
+            margin: 15px 0px;
+        }
+
+        .para-md, .para-gray {
+            max-width: 650px;
         }
 
         /* ===== header styles ===== */
@@ -122,6 +146,16 @@
             font-family: "Montserrat", sans-serif;
             line-height: 1.5;
         }
+
+        /* ===== main section ===== */
+        i {
+            color: #f44336;
+            font-size: 200px !important;
+        }
+
+        .main-section {
+            padding: 64px 16px;
+        }
      </style>
 </head>
 <body>
@@ -141,8 +175,24 @@
         <section class="hero-section">
             <div class="container">
                 <h1>start page</h1>
-                <p class="para-lg">Template by w3.css</p>
+                <p class="para-st">Template by w3.css</p>
                 <button type="button">Get Started</button>
+            </div>
+        </section>
+
+        <section class="main-section">
+            <div class="container">
+                <h2>Lorem Ipsum</h2>
+                <i class="fa fa-anchor w3-padding-64 w3-text-red float-right"></i>
+                <p class="para-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat.</p>
+                <p class="para-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                    anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
             </div>
         </section>
     </main>
