@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JavaScript</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            display: block;
+            width: 30%;
+            margin: 0 auto;
+            transition: 1s all ease;
+        }
+
+        button {
+            font-size: 25px;
+            margin: 50px 0px 0px 25px;
+            padding: 10px;
+            color: black;
+            border: none;
+            /* border-radius: 5%; */
+            border: 1px solid black;
+            transition: 0.3s all ease;
+        }
+
+        body button:not(:nth-of-type(2)) {
+            padding: 10px 25px 10px;
+        }
+
+        #sample {
+            color: black;
+            /* margin: 50px 0px 0px 600px; */
+        }
+
+        body button:first-of-type:hover {
+            font-size: 30px;
+            background-color: green;
+            color: white;
+        }
+
+        body button:nth-of-type(3):hover {
+            font-size: 20px;
+            background-color: red;
+            color: white;
+        }
+
+        body button:not(:first-of-type, :nth-of-type(2), :nth-of-type(3)):hover {
+            background-color: black;
+            color: white;
+        }
+
+        .red:hover {
+            background-color: red !important;
+        }
+
+        .green:hover {
+            background-color: green !important;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="demo">Learning JavaScript</h1>
+
+    <button onclick="document.getElementById('sample').style.fontSize='50px'">+</button><br>
+
+    <button id="sample">Sample Button</button><br>
+    
+    <button onclick="document.getElementById('sample').style.fontSize='25px'">-</button><br>
+
+    <button class="red" onclick="document.getElementById('sample').style.display='none'">Close</button>
+
+    <button class="green" onclick="document.getElementById('sample').style.display='inline'">Show</button>
+
+    <script>
+        
+    </script>
+</body>
+</html>
