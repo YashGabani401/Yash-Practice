@@ -1,3 +1,4 @@
 ===== ignores folders/files =====
 *.code-workspace
 *.zip
+*.txt
