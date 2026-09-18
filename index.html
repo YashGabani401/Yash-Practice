@@ -3,129 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
     <style>
+        /* ===== Custom Styles ===== */
+        * {
+           box-sizing: border-box;
+           margin: 0;
+           padding: 0;
+        }
 
         body {
-            margin-top: 50px;
-            text-align: center;
-            font-size: 25px;
+            background-color: #2a0a4d;
+            color: #D1C4E9;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
         }
 
-        .btn {
-            padding: 12px 25px;
-            background-color: red;
-            color: black;
-            font-size: 25px;
+        a {
+            color: inherit;
+            text-decoration: none;
             transition: 0.3s all ease;
-            font-weight: 900;
+            display: inline-block;
+            bottom: 0;
         }
 
-        button:hover {
-            transform: scale(0.9);
+        ul {
+            list-style-type: none;
         }
 
-        .display-none {
-            display: none;
+        li {
+            transition: 0.3s all ease;
         }
 
-        #restart {
-            display: none;
-            background-color: greenyellow;
-            color: black;
-            position: static;
+        /* ===== classes ===== */
+        .container {
+            max-width: 1490px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 20px;
+        }
+
+        /* ===== header ===== */
+        .navbar ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .navbar .ul-2 a {
+            margin-left: 30px;
+        }
+
+        .navbar .ul-2 {
+            position: relative;
+            right: 518px;
+        }
+
+        /* ===== hover effects ====== */
+        .navbar .nav-links > ul > li:first-child:hover {
+            transform: scaleX(1.1);
+        }
+
+        .navbar .nav-links .ul-2 a:hover {
+            position: relative;
+            bottom: 3px;
+            color: #E056FD;
+        }
+
+        .navbar .nav-links .ul-2 a::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            background-color: #E056FD;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border-radius: 2px;
+            transition: 0.3s all ease;
+        }
+
+        .navbar .nav-links .ul-2 a:hover::after {
+            width: 100%;
         }
     </style>
 </head>
-<body>
-    <h1 id="won" class="display-none">You Won!</h1>
-
-    <h2 id="timer">Time Left : 5s</h2>
-
-    <h2 id="score">Score : 0</h2>
-
-    <h2 id="lost" class="display-none">Time Over! Game Over</h2>
-
-    <button onclick="addPoint()" id="hit" class="btn" type="button">Hit</button>
-
-    <button onclick="resetGame()" id="restart" class="btn" type="button">Restart</button>
-
-    <script>
-        let score = 0;
-        let timeLeft = 5;
-        let timeInterval = null;
-
-        startTimer();
-
-        function addPoint() {
-            score = score + 1;  
-            document.getElementById('score').innerHTML = "Score : " + score;
-
-            document.getElementById('hit').style.position = 'absolute';
-
-            moveButtonToRandomPosition();
-
-            document.getElementById('won').style.display = 'none';
-            if (score>=7) {
-                document.getElementById('won').style.display = 'block';
-                document.getElementById('hit').style.display = 'none';
-                document.getElementById('score').style.display = 'none';
-                document.getElementById('restart').style.display = 'inline-block';
-            }
-        }   
-        
-        function resetGame() {
-            score = 0;
-            document.getElementById('score').innerHTML = "Score : " + score
-            document.getElementById('restart').style.display = 'none';
-            document.getElementById('won').style.display = 'none';
-            document.getElementById('hit').style.display = 'inline-block';
-            document.getElementById('score').style.display = 'block';
-
-            document.getElementById('hit').style.position = 'static';
-
-            moveButtonToRandomPosition();
-
-            document.getElementById('lost').style.display = "none";
-
-            startTimer();
-        }
-
-        function moveButtonToRandomPosition() {
-            const button = document.getElementById('hit');
-
-            const maxX = window.innerWidth - button.offsetWidth;
-            const maxY = window.innerHeight - button.offsetHeight;
-
-            const randomX = Math.floor(Math.random() * maxY);
-            const randomY = Math.floor(Math.random() * maxY);
-
-            button.style.left = randomX + 'px';
-            button.style.top = randomY + 'px';
-        }
-        
-        function startTimer() {
-            clearInterval(timeInterval);
-
-            let timeLeft = 6;
-            document.getElementById('timer').style.display = "block";
-
-            timeInterval = setInterval(() => {
-                timeLeft = timeLeft - 1;
-                document.getElementById('timer').innerHTML = "Time Left : " + timeLeft + "s";
-
-                if (timeLeft <= 0) {
-                    clearInterval(timeInterval);
-                    document.getElementById('restart').style.display = 'inline-block';
-                    document.getElementById('hit').style.display = 'none';
-                    document.getElementById('lost').style.display = 'block';
-
-                    document.getElementById('timer').style.display = "none";
-
-                    document.getElementById('score').innerHTML = "Best Score : " + score
-                }
-            }, 1000);
-        }
-    </script>
+<body>  
+    <header>
+        <section class="navbar">
+            <nav class="nav-links">
+                <ul class="container">
+                    <li><a href="">YG Portfolio</a></li>
+                    <ul class="ul-2">
+                        <li><a href="">About</a></li>
+                        <li><a href="">Skills</a></li>
+                        <li><a href="">Projects</a></li>
+                        <li><a href="">Experience</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </ul>
+            </nav>
+        </section>
+    </header>
 </body>
 </html>
