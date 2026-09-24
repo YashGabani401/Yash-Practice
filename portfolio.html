@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <style>
         /* ===== Custom Styles ===== */
         * {
@@ -34,6 +37,10 @@
             transition: 0.3s all ease;
         }
 
+        h1 {
+            font-size: 72px;
+        }
+
         /* ===== classes ===== */
         .container {
             max-width: 1490px;
@@ -42,11 +49,36 @@
             padding: 20px 20px;
         }
 
-        /* ===== header ===== */
+        .mg-16 {
+            margin-top: 16px;
+        }
+
+        .mg-8 {
+            margin-top: 8px;
+        }
+
+        .txt-purple {
+            color: #E056FD;
+        }
+
+        .txt-white {
+            color: #ffffff;
+        }
+
+        .size-24 {
+            font-size: 24px;
+        }
+
+        .size-18 {
+            font-size: 18px;
+        }
+
+                                                /* ===== header ===== */
         .navbar ul {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            font-weight: 600;
         }
 
         .navbar .ul-2 a {
@@ -86,6 +118,47 @@
         .navbar .nav-links .ul-2 a:hover::after {
             width: 100%;
         }
+
+                                                /* ===== main ===== */
+        /* ===== hero-section ===== */
+        .hero-section {
+            text-align: center;
+            margin: 112px 0px 184px 0px;
+        }
+
+        .hero-section p:nth-of-type(2) {
+            max-width: 600px;
+            margin: 16px auto;
+            margin-bottom: 0px;
+        }
+
+        .hero-section > span:nth-of-type(1) {
+            margin-left: 16px;
+            background-image: linear-gradient(to right, #df00ff, #7b00ff);
+            box-shadow: 0px 1px 15px #E056FD;
+            padding: 8px 17px;
+            border-radius: 8px;
+        }
+
+        .hero-section span:nth-of-type(2) {
+            border: 1px solid #d957d9;
+            border-radius: 8px;
+            padding: 4px 10px;
+        }
+
+        .hero-section i {
+            margin-left: 31px;
+            font-size: 24px;
+        }
+
+        .hero-section span:nth-of-type(2) {
+            margin: 24px 13px 32px;
+            display: inline-block;
+        }
+
+        .hero-section a {
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>  
@@ -93,7 +166,7 @@
         <section class="navbar">
             <nav class="nav-links">
                 <ul class="container">
-                    <li><a href="">YG Portfolio</a></li>
+                    <li><a class="txt-white" href=""><span class="txt-purple">YG </span>Portfolio</a></li>
                     <ul class="ul-2">
                         <li><a href="">About</a></li>
                         <li><a href="">Skills</a></li>
@@ -105,5 +178,17 @@
             </nav>
         </section>
     </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Hi, I'm <span class="txt-purple">Yash Gabani</span></h1>
+            <p class="mg-16 size-24">Learning Full Stack Web Development</p>
+            <p class="mg-8 size-18">i build and maintain both the front-end (user-interface) and back-end (servers, databases, and business logic) of web applications.</p>
+            <span><a class="txt-white" href="">View My Work</a></span>
+            <span><a class="txt-purple" href="">Get in Touch</a></span><br>
+            <a href=""><i class="fa-brands fa-github"></i></a>
+            <a href=""><i class="fa-solid fa-envelope"></i></a>
+        </section>
+    </main>
 </body>
 </html>
