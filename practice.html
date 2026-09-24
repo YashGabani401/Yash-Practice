@@ -1,0 +1,61 @@
+<html>
+  <head>
+  <title>My Now Amazing Webpage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/2.0.0/slick.min.css" integrity="sha512-4LYsNd7rZ3w/Nb4egddt7n38KBIpvr8djGpHdWVYS04IGO90ma9q2WUIOvgE2APdCFGbpX0/cl0OoLotWhFmVA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/2.0.0/slick-theme.min.css" integrity="sha512-x8N2Tx+THLEVqSgflGruALuSVFhlu5BkwKHhjEnjmJk9q3qraPmV3uXWnY8oisXkJuVCASJlRPFN13P4fAFphQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  
+  <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    .slick-slider {
+        margin: 25px auto;
+        padding: 25px 10px;
+        text-align: center;
+        border: 7px solid black;
+        height: 200px;
+        width: 80%;
+        box-shadow: 1px 1px 20px rgb(255, 255, 255);
+        background-color: white;
+        
+    }
+  </style>
+  </head>
+  <body>
+
+  <div class="slick-slider">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js" integrity="sha512-8LENNbXmzI/Gbj+OwXmqR6V4QaUAw0/porPzy1+dQoJqC0JPHedWoe0DDOTL2uHA5XXJyIsPtiMHH86pVlay6A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/2.0.0/slick.min.js" integrity="sha512-BOKtfC8+2NxiElU0ZCwEd2N7nnWGKEoSXrlJNrQZEXvTBoyWdhlFUKxGbmRXb5Oe+yQK4I4S3jJHH081wq5kEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.slick-slider').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 100
+    });
+    });
+  </script>
+
+  </body>
+</html>
