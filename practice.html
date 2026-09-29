@@ -1,61 +1,60 @@
-<html>
-  <head>
-  <title>My Now Amazing Webpage</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/2.0.0/slick.min.css" integrity="sha512-4LYsNd7rZ3w/Nb4egddt7n38KBIpvr8djGpHdWVYS04IGO90ma9q2WUIOvgE2APdCFGbpX0/cl0OoLotWhFmVA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/2.0.0/slick-theme.min.css" integrity="sha512-x8N2Tx+THLEVqSgflGruALuSVFhlu5BkwKHhjEnjmJk9q3qraPmV3uXWnY8oisXkJuVCASJlRPFN13P4fAFphQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  
-  <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Practice</title>
+    <style>
+        * {
+           box-sizing: border-box;
+           margin: 0;
+           padding: 0;
+        }
 
-    body {
-        background-color: black;
-    }
+        .ball-wrapper {
+          width: 100vw;
+          height: 100vh;
+          background-color: black;
+          display: flex;
+          justify-content: center;
+          position: relative;
+        }
 
-    .slick-slider {
-        margin: 25px auto;
-        padding: 25px 10px;
-        text-align: center;
-        border: 7px solid black;
-        height: 200px;
-        width: 80%;
-        box-shadow: 1px 1px 20px rgb(255, 255, 255);
-        background-color: white;
-        
-    }
-  </style>
-  </head>
-  <body>
+        .ball {
+          width: 100px;
+          height: 100px ;
+          border-radius: 50%;
+          background-image: radial-gradient(white 10%, red 50%);
+          margin-top: 50px;
+          filter: blur(1px);
+          position: absolute;
+          animation-name: ball-jump;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease-in;
+        }
 
-  <div class="slick-slider">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-    <div>10</div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js" integrity="sha512-8LENNbXmzI/Gbj+OwXmqR6V4QaUAw0/porPzy1+dQoJqC0JPHedWoe0DDOTL2uHA5XXJyIsPtiMHH86pVlay6A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/2.0.0/slick.min.js" integrity="sha512-BOKtfC8+2NxiElU0ZCwEd2N7nnWGKEoSXrlJNrQZEXvTBoyWdhlFUKxGbmRXb5Oe+yQK4I4S3jJHH081wq5kEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('.slick-slider').slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 100
-    });
-    });
-  </script>
-
-  </body>
+        @keyframes ball-jump {
+          0% {
+            top: 0%;
+          } 25% {
+            animation-timing-function: ease-out;
+          } 49% {
+            transform: scaleX(1);
+          } 50% {
+            top: 78%;
+            transform: scaleX(1.2);
+            animation-timing-function: ease-out;
+          } 100% {
+            top: 0%;
+            transform: scaleX(1);
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball-wrapper">
+        <div class="ball"></div>
+    </div>
+</body>
 </html>
