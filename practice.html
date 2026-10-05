@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animation Practice</title>
+    <title>Slider</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <style>
         * {
            box-sizing: border-box;
@@ -11,261 +14,84 @@
            padding: 0;
         }
 
-        .ball-wrapper {
+        .swiper {
           width: 100vw;
           height: 100vh;
+        }
+
+        .swiper-pagination-bullet {
+          width: 30px;
+          height: 30px;
+          color: white;
           background-color: black;
-          display: flex;
-          justify-content: center;
-          position: relative;
         }
 
-        .ball {
-          width: 100px;
-          height: 100px ;
-          border-radius: 50%;
-          background-image: radial-gradient(white 10%, red 50%);
-          margin-top: 50px;
-          filter: blur(1px);
-          position: absolute;
-          animation-name: ball-jump;
-          animation-duration: 3s;
-          animation-iteration-count: infinite;
-          animation-timing-function: ease-in;
+        body {
+          font-size: 25px;
+          font-weight: 500;
         }
 
-        /* @keyframes ball-jump {
-          0% {
-            top: 0%;
-          } 25% {
-            animation-timing-function: ease-out;
-          } 49% {
-            transform: scaleX(1);
-          } 50% {
-            top: 78%;
-            transform: scaleX(1.2);
-            animation-timing-function: ease-out;
-            transform: translate(50px);
-          } 55% {
-            transform: translate(100px);
-          } 60% {
-            transform: translate(150px);
-          } 65% {
-            transform: translate(200px);
-          } 70% {
-            transform: translate(250px);
-          } 75% {
-            transform: translate(300px);
-          } 80% {
-            transform: translate(350px);
-          } 85% {
-            transform: translate(400px);
-          } 90% {
-            transform: translate(450px);
-          } 95% {
-            transform: translate(500px);
-          } 100% {
-            top: 0%;
-            transform: scaleX(1);
-          } */
-
-        @keyframes ball-jump {
-          0% {
-            top: 0%;
-          } 1% {
-          } 2% {
-         } 3% {
-          } 4% {
-
-          } 5% {
-
-          } 6% {
-
-          } 7% {
-
-          } 8% {
-
-          } 9% {
-
-          } 10% {
-
-          } 11% {
-
-          } 12% {
-
-          } 13% {
-          } 14% {
-          } 15% {
-          } 16% {
-          } 17% {
-          } 18% {
-
-          } 19% {
-
-          } 20% {
-
-          } 21% {
-
-          } 22% {
-
-          } 23% {
-
-          } 24% {
-
-          } 25% {
-
-          } 26% {
-
-          } 27% {
-          } 28% {
-          } 29% {
-          } 30% {
-          } 31% {
-          } 32% {
-
-          } 33% {
-
-          } 34% {
-
-          } 35% {
-
-          } 36% {
-
-          } 37% {
-
-          } 38% {
-
-          } 39% {
-
-          } 40% {
-
-          } 41% {
-          } 42% {
-          } 43% {
-          } 44% {
-          } 45% {
-          } 46% {
-
-          } 47% {
-
-          } 48% {
-
-          } 49% {
-            transform: scaleX(1);
-          } 50% {
-            top: 78%;
-            transform: scaleX(1.2);
-            animation-timing-function: ease-out;
-            transform: translate(50px);
-          } 51% {
-            transform: translate(140px);
-          } 52% { 
-            transform: translate(160px);
-          } 53% {
-            transform: translate(180px);
-          } 54% {
-            transform: translate(200px);
-          } 55% {
-            transform: translate(220px);
-          } 56% {
-            transform: translate(240px);
-          } 57% {
-            transform: translate(260px);
-          } 58% {
-            transform: translate(280px);
-          } 59% {
-            transform: translate(300px);
-          } 60% {
-            transform: translate(320px);
-          } 61% {
-            transform: translate(340px);
-          } 62% {
-            transform: translate(360px);
-          } 63% {
-            transform: translate(380px);
-          } 64% {
-            transform: translate(400px);
-          } 65% {
-            transform: translate(420px);
-          } 66% {
-            transform: translate(440px);
-          } 67% {
-            transform: translate(460px);
-          } 68% {
-            transform: translate(480px);
-          } 69% {
-            transform: translate(500px);
-          } 70% {
-            transform: translate(520px);
-          } 71% {
-            transform: translate(540px);
-          } 72% {
-            transform: translate(560px);
-          } 73% {
-            transform: translate(580px);
-          } 74% {
-            transform: translate(600px);
-          } 75% {
-            transform: translate(620px);
-          } 76% {
-            transform: translate(640px);
-          } 77% {
-            transform: translate(660px);
-          } 78% {
-            transform: translate(680px);
-          } 79% {
-            transform: translate(710px);
-          } 80% {
-            transform: translate(200px);
-          } 81% {
-            transform: translate(190px);
-          } 82% {
-            transform: translate(180px);
-          } 83% {
-            transform: translate(170px);
-          } 84% {
-            transform: translate(160px);
-          } 85% {
-            transform: translate(150px);
-          } 86% {
-            transform: translate(140px);
-          } 87% {
-            transform: translate(130px);
-          } 88% {
-            transform: translate(120px);
-          } 89% {
-            transform: translate(110px);
-          } 90% {
-            transform: translate(100px);
-          } 91% {
-            transform: translate(90px);
-          } 92% {
-            transform: translate(80px);
-          } 93% {
-            transform: translate(70px);
-          } 94% {
-            transform: translate(60px);
-          } 95% {
-            transform: translate(50px);
-          } 96% {
-            transform: translate(40px);
-          } 97% {
-            transform: translate(30px);
-          } 98% {
-            transform: translate(20px);
-          } 99% {
-            transform: translate(10px);
-          } 100% {
-            top: 0%;
-            transform: scaleX(1);
-            transform: translate(0px);
-          } 
+        img {
+          width: 80%;
+          height: 90%;
+          margin: 1% 0px 0px 10%;
         }
     </style>
 </head>
 <body>
-    <div class="ball-wrapper">
-        <div class="ball"></div>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../AZG_Assignments/normal/yashgabani-sfs/assets/images/gallery/hero/bloom-1.png"></div>
+        <div class="swiper-slide"><img src="../AZG_Assignments/normal/yashgabani-sfs/assets/images/gallery/hero/bloom-2.png"></div>
+        <div class="swiper-slide"><img src="../AZG_Assignments/normal/yashgabani-sfs/assets/images/gallery/hero/bloom-3.png"></div>
+      </div>
+      
+      <div class="swiper-pagination"></div>
+    
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    
+      <div class="swiper-scrollbar"></div>
     </div>
+
+    <script type="module">
+      import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs'
+
+      const swiper = new Swiper(...)
+    </script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+          // Optional parameters
+          loop: true, 
+
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+
+          // And if we need scrollbar
+          scrollbar: {
+            el: '.swiper-scrollbar',
+          },
+        });
+
+      var swiper2 = new Swiper('.swiper', {
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + '</span>';
+          },
+        },
+      });
+    </script>
 </body>
 </html>
