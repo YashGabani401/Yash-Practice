@@ -15,17 +15,26 @@
 <body>
     <script>
       const name = 'yash';
-      const age = 21;
-      const isStudent = true;
-      const marks = 99;
-      const city = 'surat';
+      let age = 21;
+      var marks = 99;
+      
+      {
+        const name = 'someone';
+        let age = 15;
+        var marks = 14;
+      }
 
       console.log(name);
       console.log(age);
-      console.log(isStudent);
       console.log(marks);
-      console.log(city);
-      
+
+      let student = {
+        name: 'yash',
+        age: 21,
+        city: 'surat'
+      }
+
+      console.log(student);
     </script>
 </body>
 </html>
