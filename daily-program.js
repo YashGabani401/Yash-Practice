@@ -91,6 +91,7 @@ if (typeof num1 === 'number' && typeof num2 === 'number') {
     console.log('5. enter a valid number');
 }
 
+
 console.log('\nday 2: 01/11/26');
 // 1. positive, negative or zero checker
 const num = 1;
@@ -185,3 +186,10 @@ if (typeof password === 'string') {
 } else {
     console.log('5. enter a valid string character');
 }
+ 
+console.log('\nday 3: 02/11/26');
+console.log('failed to do');
+// // 1. number sequence & total sum
+// for (let i = 1; i <= 20; i++) {
+//     console.log(i);
+// }
