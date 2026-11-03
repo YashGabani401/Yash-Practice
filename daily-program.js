@@ -187,9 +187,29 @@ if (typeof password === 'string') {
     console.log('enter a valid string character');
 }
  
+
 console.log('\nday 3: 02/11/26');
 console.log('1. number sequence & total sum');
 console.log('failed to do');
 // for (let i = 1; i <= 20; i++) {
 //     console.log(i);
+// }
+
+
+console.log('\nday 4: 03/11/26');
+console.log('1. forward counter (for loop)');
+for (let i = 1; i <= 50; i++) {
+    console.log(i);
+}
+
+// in process:
+
+// console.log('2. backward even counter (while loop)');
+// let num3 = 50;
+
+// while (num3 <= 2) {
+//     if (num3 % 2 === 0) {
+//         console.log(num3);
+//         num3--;
+//     }
 // }
