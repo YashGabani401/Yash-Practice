@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WanderNest - Master Plugin Suite</title>
+    
+    <!-- ===== CSS STYLESHEET IMPORTS ===== -->
+    <link rel="stylesheet" href="./assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/plugins/sliders/slick/css/slick.min.css">
+    <link rel="stylesheet" href="./assets/plugins/sliders/slick/css/slick-theme.min.css">
+    <link rel="stylesheet" href="./assets/plugins/sliders/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/wow/css/animate.min.css">
+    <link rel="stylesheet" href="./assets/plugins/fancybox/css/jquery.fancybox.min.css" />
+
+    <style>
+      body { background-color: #f8f9fa; padding-bottom: 120px; font-family: system-ui, sans-serif; }
+      .test-card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid #dee2e6; }
+      .test-title { border-bottom: 2px solid #e9ecef; padding-bottom: 10px; margin-bottom: 20px; font-weight: 700; color: #495057; }
+      .slider-box { background: #4f46e5; color: white; text-align: center; padding: 60px 20px; font-size: 1.5rem; font-weight: bold; border-radius: 8px; }
+      .swiper-box { background: #10b981; }
+      .panzoom-box-wrapper { width: 100%; height: 320px; border: 2px dashed #ced4da; border-radius: 8px; background: #e9ecef; position: relative; overflow: hidden; cursor: grab; }
+      .panzoom-box-element { width: 120px; height: 120px; background: #ef4444; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin: 100px auto 0; user-select: none; }
+      
+      /* Slick Font/Icon Override Fix */
+      @font-face { font-family: 'slick'; src: local('Arial'); }
+      .slick-prev:before { content: '←' !important; font-family: sans-serif !important; color: #333 !important; font-size: 24px !important; }
+      .slick-next:before { content: '→' !important; font-family: sans-serif !important; color: #333 !important; font-size: 24px !important; }
+      .slick-loading .slick-list { background: none !important; }
+    </style>
+  </head>
+  <body>
+
+    <div class="container mt-5">
+      <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary">WanderNest Sandbox</h1>
+        <p class="lead text-muted">Scroll down to inspect and verify the integration status of each component.</p>
+      </div>
+
+      <!-- 1. BOOTSTRAP 5 -->
+      <div class="test-card">
+        <h4 class="test-title">1. Bootstrap 5 Framework</h4>
+        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#bootstrapCollapse">Toggle Accordion</button>
+        <div id="bootstrapCollapse" class="collapse mt-3 alert alert-success">Bootstrap logic running successfully!</div>
+      </div>
+
+      <!-- 2. WOW.JS & COUNTER MODULE -->
+      <div class="test-card">
+        <h4 class="test-title">2. WOW.js Animations & Counter-Up2</h4>
+        <div class="row g-4 text-center">
+          <div class="col-md-6">
+            <div class="p-4 bg-light rounded shadow-sm wow animate__animated animate__fadeInLeft" data-wow-duration="1s">
+              <h2 class="display-4 fw-bold text-indigo counter">4850</h2>
+              <span class="badge bg-secondary">WOW Left Fade + Value Count</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-4 bg-light rounded shadow-sm wow animate__animated animate__fadeInRight" data-wow-duration="1s">
+              <h2 class="display-4 fw-bold text-indigo counter">99</h2>
+              <span class="badge bg-secondary">WOW Right Fade + Value Count</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. SLICK CAROUSEL -->
+      <div class="test-card">
+        <h4 class="test-title">3. Slick Slider Carousel</h4>
+        <div class="slick-test-carousel">
+          <div><div class="slider-box mx-2">Slick View Panel A</div></div>
+          <div><div class="slider-box mx-2">Slick View Panel B</div></div>
+          <div><div class="slider-box mx-2">Slick View Panel C</div></div>
+        </div>
+      </div>
+
+      <!-- 4. SWIPER BUNDLE -->
+      <div class="test-card">
+        <h4 class="test-title">4. Swiper Bundle Slider</h4>
+        <div class="swiper swiper-test-carousel" style="width: 100%; height: 180px;">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="slider-box swiper-box">Swiper Panel 1</div></div>
+            <div class="swiper-slide"><div class="slider-box swiper-box">Swiper Panel 2</div></div>
+            <div class="swiper-slide"><div class="slider-box swiper-box">Swiper Panel 3</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. FANCYBOX V3 LIGHTBOX OVERLAY -->
+      <div class="test-card text-center">
+        <h4 class="test-title text-start">5. Fancybox v3 Lightbox Overlay</h4>
+        <p class="text-muted text-start">Click the button below to launch a responsive lightbox modal popup entirely offline.</p>
+        
+        <a data-fancybox data-src="#inline-popup-content" href="javascript:;" class="btn btn-outline-dark px-4">
+          Launch Gallery Lightbox Pop-up
+        </a>
+
+        <!-- Target hidden modal popup elements -->
+        <div style="display: none;" id="inline-popup-content" class="p-5 text-start rounded">
+          <h3 class="text-primary fw-bold">Fancybox Content Box</h3>
+          <p class="text-muted mt-2">Success! Your local Fancybox v3 script engine is operating securely offline.</p>
+        </div>
+      </div>
+
+      <!-- 6. STANDALONE PANZOOM ELEMENT -->
+      <div class="test-card">
+        <h4 class="test-title">6. Panzoom Canvas Element</h4>
+        <div class="panzoom-box-wrapper" id="panzoomContainer">
+          <div class="panzoom-box-element" id="panzoomTarget">DRAG & ZOOM</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== JS SCRIPT IMPORTS ===== -->
+    <script src="./assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/plugins/sliders/slick/js/jquery.min.js"></script>
+    
+    <!-- 🛠️ COMPLETE JQUERY ECOSYSTEM COMPATIBILITY PATCH FOR FANCYBOX V3 -->
+    <script>
+      if (window.jQuery) {
+        window.jQuery.isArray = Array.isArray;
+        
+        window.jQuery.isFunction = function(obj) {
+          return typeof obj === "function" && typeof obj.nodeType !== "number";
+        };
+        
+        window.jQuery.type = function(obj) {
+          if (obj == null) return String(obj);
+          return typeof obj === "object" || typeof obj === "function" 
+            ? Object.prototype.toString.call(obj).slice(8, -1).toLowerCase() 
+            : typeof obj;
+        };
+
+        // Fixes the modern numeric conversion check framework trigger
+        window.jQuery.isNumeric = function(obj) {
+          var type = window.jQuery.type(obj);
+          return (type === "number" || type === "string") && !isNaN(obj - parseFloat(obj));
+        };
+      }
+    </script>
+
+    <script src="./assets/plugins/sliders/slick/js/slick.min.js"></script>
+    <script src="./assets/plugins/sliders/swiper/swiper-bundle.min.js"></script>
+    <script src="./assets/plugins/wow/js/wow.min.js"></script>
+    <script src="./assets/plugins/counter/counterup2.min.js"></script>
+    <script src="./assets/plugins/fancybox/js/jquery.fancybox.min.js"></script>
+    <script src="./assets/plugins/panzoom/panzoom.min.js"></script>
+
+    <!-- ===== LOGIC RUNTIME INITIALIZATIONS ===== -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        
+        // A. Run WOW Animations
+        try {
+          new WOW({ boxClass: 'wow', animateClass: 'animate__animated', offset: 60 }).init();
+        } catch(e) { console.error("WOW failed:", e); }
+
+        // B. Run Counter-Up Progress Numbers
+        const counters = document.querySelectorAll('.counter');
+        const counterUpFn = window.counterUp?.default || window.counterUp;
+        if (counterUpFn) {
+          const countObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                counterUpFn(entry.target, { duration: 2000, delay: 16 });
+                countObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+          counters.forEach(c => countObserver.observe(c));
+        }
+
+        // C. Run Slick Carousel Framework
+        try {
+          $('.slick-test-carousel').slick({ infinite: true, slidesToShow: 2, slidesToScroll: 1, autoplay: true, autoplaySpeed: 2500 });
+        } catch(e) { console.error("Slick Slider failed:", e); }
+
+        // D. Run Swiper Slider Engine
+        try {
+          new Swiper('.swiper-test-carousel', { loop: true, autoplay: { delay: 2500 } });
+        } catch(e) { console.error("Swiper failed:", e); }
+
+        // E. Run Fancybox v3 Window Hooks
+        try {
+          $('[data-fancybox]').fancybox({ 
+            src: '#inline-popup-content',
+            type: 'inline',
+            buttons: ["close"] 
+          });
+        } catch(e) { console.error("Fancybox failed:", e); }
+
+        // F. Run Standalone Panzoom Controls
+        try {
+          const panElement = document.getElementById('panzoomTarget');
+          const panWrapper = document.getElementById('panzoomContainer');
+          const PanzoomEngine = window.Panzoom?.default || window.Panzoom;
+          
+          if (PanzoomEngine && panElement) {
+            const panInstance = PanzoomEngine(panElement, { maxScale: 5 });
+            panWrapper.addEventListener('wheel', (e) => {
+              e.preventDefault();
+              panInstance.zoomWithWheel(e);
+            }, { passive: false });
+          }
+        } catch(e) { console.error("Panzoom failed:", e); }
+
+      });
+    </script>
+  </body>
+</html>
